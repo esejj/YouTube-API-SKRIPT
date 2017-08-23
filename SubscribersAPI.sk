@@ -1,0 +1,8 @@
+function getSubscribers(url: text , p: player):
+	set {_var} to text of "%{_url}%"
+	if {_var} contains "<span class="yt-subscription-button-subscriber-count-branded-horizontal yt-subscriber-count" title="" aria-label="" tabindex="0"></span>":
+		replace all "<span class="yt-subscription-button-subscriber-count-branded-horizontal yt-subscriber-count" title="" aria-label="" tabindex="0"></span>" with "" in {_var}
+		replace all "&nbsp" with "" in {_var}
+		# do something...
+	else:
+		send "This is not a video-url." to {_p}
